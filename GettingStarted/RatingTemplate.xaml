@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:avatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
+          xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+          mc:Ignorable="d"
+             x:Class="GettingStarted.RatingTemplate">
+  <ViewCell.View>
+        <Grid HorizontalOptions="StartAndExpand"  Padding="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="36" />
+                <ColumnDefinition Width=".8*" />
+                <ColumnDefinition Width=".2*" />
+            </Grid.ColumnDefinitions>
+
+            <avatar:SfAvatarView Grid.Row="0"
+                      Grid.Column="0"
+                                 WidthRequest="36"
+                                 HeightRequest="36"
+                                 CornerRadius="18"
+                                 VerticalOptions="StartAndExpand"
+                                 HorizontalOptions="CenterAndExpand"
+                                 BorderColor="Transparent"
+                      ContentType="Default"
+                      IsVisible="{Binding ShowAvatar}"
+                      ImageSource="{Binding Author.Avatar}" />
+
+
+            <Frame Grid.Row="0" Grid.Column="1">
+                <StackLayout BackgroundColor="#FFFFFF"  Spacing="4" Padding="16,8,16,8">
+                    <Label
+               HorizontalOptions="StartAndExpand"
+               Text="{Binding Text}"
+               LineBreakMode="WordWrap"
+               TextColor="#212121"
+               FontFamily="Roboto-Regular"
+               FontSize="14"
+               VerticalTextAlignment="Center" />
+
+                    <rating:SfRating ItemCount="5" ItemSize="20" />
+
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

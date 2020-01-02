@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:avatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
+          mc:Ignorable="d"
+             x:Class="GettingStarted.IncomingTemplate">
+  <ViewCell.View>
+      
+        <Grid HorizontalOptions="StartAndExpand"  Padding="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="36" />
+                <ColumnDefinition Width=".8*" />
+                <ColumnDefinition Width=".2*" />
+            </Grid.ColumnDefinitions>
+
+            <avatar:SfAvatarView Grid.Row="0"
+                      Grid.Column="0"
+                                 WidthRequest="36"
+                                 HeightRequest="36"
+                                 CornerRadius="18"
+                                 VerticalOptions="StartAndExpand"
+                                 HorizontalOptions="CenterAndExpand"
+                                 BorderColor="Transparent"
+                      ContentType="Default"
+                      IsVisible="{Binding ShowAvatar}"
+                      ImageSource="{Binding Author.Avatar}" />
+
+
+            <StackLayout BackgroundColor="#FFFFFF" Grid.Row="0" Grid.Column="1" Spacing="4" Padding="16,8,16,8">
+                <Label
+               Text="{Binding Author.Name}"
+               HorizontalOptions="StartAndExpand"
+               MinimumHeightRequest="15"
+               TextColor="#5C5C5C"
+               FontFamily="Roboto-Regular"
+               FontSize="12"/>
+
+                <Label
+               HorizontalOptions="StartAndExpand"
+               Text="{Binding Text}"
+               LineBreakMode="WordWrap"
+               TextColor="#212121"
+               FontFamily="Roboto-Regular"
+               FontSize="14"
+               VerticalTextAlignment="Center" />
+            </StackLayout>
+
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

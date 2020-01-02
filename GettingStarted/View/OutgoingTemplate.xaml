@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:avatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
+          mc:Ignorable="d"
+             x:Class="GettingStarted.OutgoingTemplate">
+    <ViewCell.View>
+        <Grid HorizontalOptions="EndAndExpand" Padding="0,0,8,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*" />
+                <ColumnDefinition Width=".8*" />
+                <ColumnDefinition Width="36" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout BackgroundColor="#007AFF" Grid.Row="0" Grid.Column="1" Spacing="4" Padding="16,8,16,8">
+                <Label 
+                           Text="{Binding Author.Name}"
+                           HorizontalOptions="EndAndExpand"
+                           MinimumHeightRequest="15"
+                           TextColor="#D0E8FF"
+                           FontSize="12"
+                           LineBreakMode="TailTruncation"
+                           FontFamily="Roboto-Regular" 
+                           VerticalTextAlignment="Center" />
+
+                <Label
+                           Text="{Binding Text}"
+                           FontFamily="Roboto-Regular"
+                           HorizontalOptions="EndAndExpand"
+                           TextColor="#FFFFFF"
+                           VerticalOptions="FillAndExpand"
+                           FontSize="14"
+                           VerticalTextAlignment="Center" />
+            </StackLayout>
+
+            <avatar:SfAvatarView Grid.Row="0"
+                      Grid.Column="2"
+                                 WidthRequest="36"
+                                 HeightRequest="36"
+                                 CornerRadius="18"
+                      BorderColor="Transparent"
+                                 VerticalOptions="StartAndExpand"
+                                 HorizontalOptions="CenterAndExpand"
+                      ContentType="Default"
+                      IsVisible="{Binding ShowAvatar}"
+                      ImageSource="{Binding Author.Avatar}" />
+
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

@@ -32,56 +32,29 @@ namespace GettingStarted
 
 //Template selector 
 
-public class ChatMessageTemplateSelector : DataTemplateSelector
+public class MyCustomMessageTemplateSelector : ChatMessageTemplateSelector
 {
-    private readonly DataTemplate incomingDataTemplate;
-    private readonly DataTemplate outgoingDataTemplate;
     private readonly DataTemplate ratingDataTemplate;
-
-    internal SfChat Chat
+    public MyCustomMessageTemplateSelector(SfChat chat) : base(chat)
     {
-        get;
-        set;
-    }
-
-    public ChatMessageTemplateSelector()
-    {
-        this.incomingDataTemplate = new DataTemplate(typeof(IncomingTemplate));
-        this.outgoingDataTemplate = new DataTemplate(typeof(OutgoingTemplate));
         this.ratingDataTemplate = new DataTemplate(typeof(RatingTemplate));
     }
 
     protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
     {
-        var message = item as IMessage;
-        if (message == null)
-            return null;
-
-
-        if (message.Author == Chat.CurrentUser)
+        if (item as ITextMessage != null && item as ITextMessage.Text == "How would you rate your interaction with our travel bot?")
         {
-            return outgoingDataTemplate;
+            // returns a custom rating template for this messages.
+            return this.ratingDataTemplate; 
         }
         else
         {
-            if (item as ITextMessage != null)
-            {
-                if ((item as ITextMessage).Text == "How would you rate your interaction with our travel bot?")
-                {
-                    return ratingDataTemplate;
-                }
-                else
-                {
-                    return incomingDataTemplate;
-                }
-            }
-            else
-            {
-                return null;
-            }
+            // returns default template for all other messages.
+            return base.OnSelectTemplate(item, container);
         }
     }
 }
+
 
 // View Model
 

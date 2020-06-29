@@ -79,42 +79,36 @@ namespace GettingStarted
             {
                 Author = new Author() { Name = "Travel Bot", Avatar = "Aeroplane.png" },
                 Text = "Select your preferred airline company.",
-                ShowAvatar = true,
             });
 
             this.messages.Add(new TextMessage()
             {
                 Author = currentUser,
                 Text = "Air Canada $2700",
-                ShowAvatar = true,
             });
 
             this.messages.Add(new TextMessage()
             {
                 Author = new Author() { Name = "Travel Bot", Avatar = "Aeroplane.png" },
                 Text = "Congratulations ! Your booking has been conformed. A conformation along with your ticket has been sent to your email",
-                ShowAvatar = true,
             });
 
             this.messages.Add(new TextMessage()
             {
                 Author = new Author() { Name = "Travel Bot", Avatar = "Aeroplane.png" },
                 Text = "Bon Voyage",
-                ShowAvatar = true,
             });
 
             this.messages.Add(new TextMessage()
             {
                 Author = currentUser,
                 Text = "Thank you",
-                ShowAvatar = true,
             });
 
             this.messages.Add(new TextMessage()
             {
                 Author = new Author() { Name = "Travel Bot", Avatar = "Aeroplane.png" },
                 Text = "How would you rate your interaction with our travel bot?",
-                ShowAvatar = true,
             });
         }
     }

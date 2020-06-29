@@ -16,7 +16,9 @@ namespace GettingStarted
             viewModel = new GettingStartedViewModel();
             this.sfChat.Messages = viewModel.Messages;
             this.sfChat.CurrentUser = viewModel.CurrentUser;
-            this.sfChat.MessageTemplate = new ChatMessageTemplateSelector() { Chat = this.sfChat };
+            this.sfChat.MessageTemplate = new MessageTemplateSelector(sfChat);
+            this.sfChat.ShowIncomingMessageAvatar = true;
+            this.sfChat.ShowOutgoingMessageAvatar = true;
             this.Content = sfChat;
         }
     }

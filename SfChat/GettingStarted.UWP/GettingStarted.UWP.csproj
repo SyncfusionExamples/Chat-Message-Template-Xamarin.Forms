@@ -151,7 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Syncfusion.Xamarin.SfChat">
-      <Version>17.4.0.39</Version>
+      <Version>18.1.0.59</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRating">
       <Version>17.4.0.39</Version>

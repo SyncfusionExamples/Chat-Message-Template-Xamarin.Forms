@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.Xamarin.SfChat" Version="17.4.0.39" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChat" Version="18.1.0.59" />
     <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="17.4.0.39" />
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
@@ -19,12 +19,6 @@
 
   <ItemGroup>
     <EmbeddedResource Update="RatingTemplate.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\IncomingTemplate.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\OutgoingTemplate.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\ChatPage.xaml">
